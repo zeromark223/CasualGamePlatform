@@ -1,0 +1,275 @@
+
+.modal {
+}
+
+.modal > .header {
+}
+
+.center {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.w3-sidebar .w3-bar-block .w3-bar-item {
+    padding: 0 16px;
+    font-size: 16px;
+}
+
+.w3-bar-block .w3-button {
+    padding: 0;
+}
+
+.w3-bar-block .w3-bar-item {
+    width: 100%;
+    display: block;
+    padding: 8px 16px;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0;
+}
+
+.w3-btn, .w3-button {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.w3-btn, .w3-button {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+
+.vertical-menu {
+    width: 100%; /* Set a width if you like */
+
+}
+
+.paddingTop{
+    display: block;
+    padding-top: 10px;
+}
+
+.paddingTop3{
+    padding-top: 3px;
+}
+
+.paddingTop5{
+    padding-top: 5px;
+}
+
+.paddingLeft10{
+    padding-left: 12px;
+}
+
+.vertical-menu a {
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+    width: 100%;
+}
+
+.center {
+    margin: auto;
+    width: 80%;
+    padding: 4px;
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+    background-color: #449d44; /* Add a green color to the "active/current" link */
+    color: white;
+}
+
+.vertical-menu a.inactive {
+    background-color: #ffffff; /* Add a green color to the "active/current" link */
+    color: white;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.layout-menu {
+    padding: 1em;
+    position: fixed;
+    z-index: 999;
+}
+
+.layout {
+    margin-top: 30px;
+    float: left;
+    width: 90%;
+    padding: 0 1em;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.menu-icon{
+    z-index: 999;
+}
+
+.fullscreen{
+    width: 90%;
+    height: 90%;
+}
+
+.burger-menu,
+.burger-menu.open {
+    display: inline-block;
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    z-index: 9999;
+    background: #fff;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.burger-menu .bar1,
+.bar2,
+.bar3 {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.burger-menu.open .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-4px, 4px);
+    transform: rotate(-45deg) translate(-4px, 4px);
+}
+
+.burger-menu.open .bar2 {
+    opacity: 0;
+}
+
+.burger-menu.open .bar3 {
+    -webkit-transform: rotate(45deg) translate(-6px, -6px);
+    transform: rotate(45deg) translate(-6px, -6px);
+}
+
+.newlist_summary{
+    color: white;
+    white-space: pre-wrap !important;
+}
+
+/*OverlayTrigger .toolTip{*/
+    /*opacity: 0 !important;*/
+    /*transition-duration: 5s!important;*/
+/*}*/
+
+/*OverlayTrigger:active .toolTip{*/
+    /*opacity: 1!important;*/
+/*}*/
+
+.detail{
+    float: right;
+    border: none !important;
+}
+
+.toolTip{
+    animation: spinAppear 1.0s;
+    /*animation: float 5s ease-in-out infinite;*/
+}
+
+@keyframes spinAppear{
+    0% {
+        opacity: 0;
+        transform: rotate(0deg) scale(1.0);
+    }
+    50% {
+        opacity: 0.5;
+        transform: rotate(180deg) scale(3.0);
+    }
+    100%{
+        opacity: 1;
+        transform: rotate(360deg) scale(1.0);
+    }
+}
+
+@keyframes float {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translatey(20px);
+    }
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+        transform: translatey(-20px);
+    }
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translatey(20px);
+    }
+}
+
+@keyframes shaking {
+    0%{
+        transform: translatex(100%);
+    }
+    10%{
+        transform: translatex(-100%);
+    }
+    20%{
+        transform: translatex(80%);
+    }
+    30%{
+        transform: translatex(-80%);
+    }
+    40%{
+        transform: translatex(60%);
+    }
+    50%{
+        transform: translatex(-60%);
+    }
+    60%{
+        transform: translatex(40%);
+    }
+    70%{
+        transform: translatex(-40%);
+    }
+    80%{
+        transform: translatex(20%);
+    }
+    90%{
+        transform: translatex(-20%);
+    }
+    100%{
+        transform: translatex(0%);
+    }
+}
+
+.content{
+    height: 500px;
+}
+

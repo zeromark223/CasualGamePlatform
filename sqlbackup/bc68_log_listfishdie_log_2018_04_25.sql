@@ -1,0 +1,12 @@
+INSERT INTO bc68_log.listfishdie_log_2018_04_25 (UserID, KindID, MatchID, FishKind, FishCount, BulletCount, UserPayMoney, UserEarnMoney, UpdateTime) VALUES (2, 1, 1, 0, 6, 6, 10010, 20020, '2018-04-25 03:05:11');
+INSERT INTO bc68_log.listfishdie_log_2018_04_25 (UserID, KindID, MatchID, FishKind, FishCount, BulletCount, UserPayMoney, UserEarnMoney, UpdateTime) VALUES (2, 1, 1, 1, 3, 3, 6000, 12000, '2018-04-25 03:05:11');
+INSERT INTO bc68_log.listfishdie_log_2018_04_25 (UserID, KindID, MatchID, FishKind, FishCount, BulletCount, UserPayMoney, UserEarnMoney, UpdateTime) VALUES (2, 1, 1, 9, 3, 3, 6000, 72000, '2018-04-25 03:05:11');
+INSERT INTO bc68_log.listfishdie_log_2018_04_25 (UserID, KindID, MatchID, FishKind, FishCount, BulletCount, UserPayMoney, UserEarnMoney, UpdateTime) VALUES (2, 1, 1, 5, 1, 1, 2000, 12000, '2018-04-25 03:05:11');
+INSERT INTO bc68_log.listfishdie_log_2018_04_25 (UserID, KindID, MatchID, FishKind, FishCount, BulletCount, UserPayMoney, UserEarnMoney, UpdateTime) VALUES (2, 1, 1, 8, 2, 2, 4000, 40000, '2018-04-25 03:05:11');
+INSERT INTO bc68_log.listfishdie_log_2018_04_25 (UserID, KindID, MatchID, FishKind, FishCount, BulletCount, UserPayMoney, UserEarnMoney, UpdateTime) VALUES (2, 1, 1, 13, 2, 2, 4000, 100000, '2018-04-25 03:05:11');
+INSERT INTO bc68_log.listfishdie_log_2018_04_25 (UserID, KindID, MatchID, FishKind, FishCount, BulletCount, UserPayMoney, UserEarnMoney, UpdateTime) VALUES (2, 1, 1, 6, 4, 4, 8000, 64000, '2018-04-25 03:05:11');
+INSERT INTO bc68_log.listfishdie_log_2018_04_25 (UserID, KindID, MatchID, FishKind, FishCount, BulletCount, UserPayMoney, UserEarnMoney, UpdateTime) VALUES (2, 1, 1, 7, 2, 2, 4000, 36000, '2018-04-25 03:05:11');
+INSERT INTO bc68_log.listfishdie_log_2018_04_25 (UserID, KindID, MatchID, FishKind, FishCount, BulletCount, UserPayMoney, UserEarnMoney, UpdateTime) VALUES (2, 1, 1, 2, 1, 1, 2000, 6000, '2018-04-25 03:05:11');
+INSERT INTO bc68_log.listfishdie_log_2018_04_25 (UserID, KindID, MatchID, FishKind, FishCount, BulletCount, UserPayMoney, UserEarnMoney, UpdateTime) VALUES (2, 1, 1, 3, 4, 4, 8000, 32000, '2018-04-25 03:05:11');
+INSERT INTO bc68_log.listfishdie_log_2018_04_25 (UserID, KindID, MatchID, FishKind, FishCount, BulletCount, UserPayMoney, UserEarnMoney, UpdateTime) VALUES (2, 1, 1, 30, 0, 8, 16000, 0, '2018-04-25 03:05:11');
+INSERT INTO bc68_log.listfishdie_log_2018_04_25 (UserID, KindID, MatchID, FishKind, FishCount, BulletCount, UserPayMoney, UserEarnMoney, UpdateTime) VALUES (2, 1, 1, 11, 1, 1, 2000, 36000, '2018-04-25 03:05:11');

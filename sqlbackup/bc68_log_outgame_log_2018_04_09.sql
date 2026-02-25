@@ -1,0 +1,3 @@
+INSERT INTO bc68_log.outgame_log_2018_04_09 (Id, UserID, ServerId, DeskId, KindID, MoneyIn, MoneyOut, MoneyChange, TimeIn, TimeOut) VALUES (1, 71467, 2231231, 0, 1, 754576683, 754569383, -7300, '2018-04-09 14:18:35', '2018-04-09 14:19:01');
+INSERT INTO bc68_log.outgame_log_2018_04_09 (Id, UserID, ServerId, DeskId, KindID, MoneyIn, MoneyOut, MoneyChange, TimeIn, TimeOut) VALUES (2, 102194, 2231231, 0, 1, 855800514, 855800514, 0, '2018-04-09 14:49:09', '2018-04-09 14:49:10');
+INSERT INTO bc68_log.outgame_log_2018_04_09 (Id, UserID, ServerId, DeskId, KindID, MoneyIn, MoneyOut, MoneyChange, TimeIn, TimeOut) VALUES (3, 101266, 2231231, 0, 1, 813766634, 813766634, 0, '2018-04-09 15:09:22', '2018-04-09 15:09:24');

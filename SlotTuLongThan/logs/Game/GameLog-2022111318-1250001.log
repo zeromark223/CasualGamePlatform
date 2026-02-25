@@ -1,0 +1,79 @@
+[2022-11-13 18:47:41.643] [INFO] Game - ID 1250001 is online listen all on port [WS] : 2018
+[2022-11-13 18:47:42.639] [INFO] Game - GameServer Initialling !
+[2022-11-13 18:47:42.640] [INFO] Game - GameServer Init Status :  
+SQLAdapter false 
+RedisAdapter false 
+GMToolAdapter false 
+LogRecorder false
+[2022-11-13 18:47:43.647] [INFO] Game - GameServer Initialling !
+[2022-11-13 18:47:43.648] [INFO] Game - GameServer Init Status :  
+SQLAdapter false 
+RedisAdapter false 
+GMToolAdapter false 
+LogRecorder false
+[2022-11-13 18:47:44.651] [INFO] Game - GameServer Initialling !
+[2022-11-13 18:47:44.651] [INFO] Game - GameServer Init Status :  
+SQLAdapter false 
+RedisAdapter false 
+GMToolAdapter false 
+LogRecorder false
+[2022-11-13 18:47:45.656] [INFO] Game - GameServer Initialling !
+[2022-11-13 18:47:45.657] [INFO] Game - GameServer Init Status :  
+SQLAdapter false 
+RedisAdapter false 
+GMToolAdapter false 
+LogRecorder false
+[2022-11-13 18:47:46.665] [INFO] Game - GameServer Initialling !
+[2022-11-13 18:47:46.667] [INFO] Game - GameServer Init Status :  
+SQLAdapter false 
+RedisAdapter false 
+GMToolAdapter false 
+LogRecorder false
+[2022-11-13 18:47:47.672] [INFO] Game - GameServer Initialling !
+[2022-11-13 18:47:47.672] [INFO] Game - GameServer Init Status :  
+SQLAdapter false 
+RedisAdapter false 
+GMToolAdapter false 
+LogRecorder false
+[2022-11-13 18:47:48.685] [INFO] Game - GameServer Initialling !
+[2022-11-13 18:47:48.685] [INFO] Game - GameServer Init Status :  
+SQLAdapter false 
+RedisAdapter false 
+GMToolAdapter false 
+LogRecorder false
+[2022-11-13 18:47:49.264] [ERROR] Game - GameServer 1250001 is maintaining
+[2022-11-13 18:47:49.264] [ERROR] Game - GameServer 1250001 has been ready for maintain
+[2022-11-13 18:47:49.264] [ERROR] Game - GameServer 1250001 has been clean user
+[2022-11-13 18:47:49.491] [ERROR] Game - GameServer 1250001 is maintaining
+[2022-11-13 18:47:49.491] [ERROR] Game - GameServer 1250001 has been ready for maintain
+[2022-11-13 18:47:49.491] [ERROR] Game - GameServer 1250001 has been clean user
+[2022-11-13 18:47:49.685] [INFO] Game - GameServer Initialling !
+[2022-11-13 18:47:49.686] [INFO] Game - GameServer Init Status :  
+SQLAdapter false 
+RedisAdapter false 
+GMToolAdapter false 
+LogRecorder false
+[2022-11-13 18:47:49.715] [ERROR] Game - GameServer 1250001 is maintaining
+[2022-11-13 18:47:49.715] [ERROR] Game - GameServer 1250001 has been ready for maintain
+[2022-11-13 18:47:49.715] [ERROR] Game - GameServer 1250001 has been clean user
+[2022-11-13 18:47:50.310] [ERROR] Game - GameServer 1250001 is maintaining
+[2022-11-13 18:47:50.311] [ERROR] Game - GameServer 1250001 has been ready for maintain
+[2022-11-13 18:47:50.311] [ERROR] Game - GameServer 1250001 has been clean user
+[2022-11-13 18:47:50.685] [INFO] Game - GameServer Initialling !
+[2022-11-13 18:47:50.686] [INFO] Game - GameServer Init Status :  
+SQLAdapter false 
+RedisAdapter false 
+GMToolAdapter false 
+LogRecorder false
+[2022-11-13 18:47:50.829] [ERROR] Game - GameServer 1250001 is maintaining
+[2022-11-13 18:47:50.829] [ERROR] Game - GameServer 1250001 has been ready for maintain
+[2022-11-13 18:47:50.829] [ERROR] Game - GameServer 1250001 has been clean user
+[2022-11-13 18:47:51.694] [INFO] Game - GameServer Initialling !
+[2022-11-13 18:47:51.694] [INFO] Game - GameServer Init Status :  
+SQLAdapter false 
+RedisAdapter false 
+GMToolAdapter false 
+LogRecorder false
+[2022-11-13 18:47:51.790] [ERROR] Game - GameServer 1250001 is maintaining
+[2022-11-13 18:47:51.790] [ERROR] Game - GameServer 1250001 has been ready for maintain
+[2022-11-13 18:47:51.790] [ERROR] Game - GameServer 1250001 has been clean user

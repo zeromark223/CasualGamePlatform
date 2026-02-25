@@ -1,0 +1,3 @@
+INSERT INTO bc68_log.login_log_2018_04_22 (UserID, Token, CreateDate, IP, ServerID, ChannelID, ProviderID, PlatformID) VALUES (0, null, '2018-04-22 09:06:02', '27.74.252.80', null, -1, -1, -1);
+INSERT INTO bc68_log.login_log_2018_04_22 (UserID, Token, CreateDate, IP, ServerID, ChannelID, ProviderID, PlatformID) VALUES (0, null, '2018-04-22 12:46:22', '42.112.87.2', null, -1, -1, -1);
+INSERT INTO bc68_log.login_log_2018_04_22 (UserID, Token, CreateDate, IP, ServerID, ChannelID, ProviderID, PlatformID) VALUES (0, null, '2018-04-22 12:46:32', '118.69.60.173', null, -1, -1, -1);

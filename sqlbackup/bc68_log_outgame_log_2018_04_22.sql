@@ -1,0 +1,2 @@
+INSERT INTO bc68_log.outgame_log_2018_04_22 (Id, UserID, ServerId, DeskId, KindID, MoneyIn, MoneyOut, MoneyChange, TimeIn, TimeOut) VALUES (1, 17, 2231231, 0, 1, 10010000, 10010000, 0, '2018-04-22 09:06:18', '2018-04-22 09:06:20');
+INSERT INTO bc68_log.outgame_log_2018_04_22 (Id, UserID, ServerId, DeskId, KindID, MoneyIn, MoneyOut, MoneyChange, TimeIn, TimeOut) VALUES (2, 2, 2231231, 0, 1, 11650, 11520, -130, '2018-04-22 12:46:37', '2018-04-22 12:46:50');

@@ -1,0 +1,358 @@
+-- MySQL dump 10.16  Distrib 10.3.7-MariaDB, for Linux (x86_64)
+--
+-- Host: localhost    Database: bc68_log
+-- ------------------------------------------------------
+-- Server version	10.3.7-MariaDB-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `dailyaward_log`
+--
+
+DROP TABLE IF EXISTS `dailyaward_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dailyaward_log` (
+  `UserID` bigint(20) NOT NULL,
+  `Createdate` date NOT NULL,
+  `AwardMoney` bigint(20) DEFAULT NULL,
+  `AwardBounding` bigint(20) DEFAULT NULL,
+  `TotalMoney` bigint(20) DEFAULT NULL,
+  `WebMoney` bigint(20) DEFAULT NULL,
+  `GameMoney` bigint(20) DEFAULT NULL,
+  `ChannelID` int(11) DEFAULT NULL COMMENT 'Kênh đăng nhập',
+  `ProviderID` int(11) DEFAULT NULL COMMENT 'Loại Provider, 0 = origin, 1 = FB',
+  `PlatformID` int(11) DEFAULT NULL COMMENT 'Loai Platform 0: web, 1 android, 2 IOS',
+  `IsGet` int(11) DEFAULT NULL COMMENT 'Đã nhận chưa',
+  PRIMARY KEY (`UserID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dailyaward_log`
+--
+
+LOCK TABLES `dailyaward_log` WRITE;
+/*!40000 ALTER TABLE `dailyaward_log` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dailyaward_log` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `globalboss_spawn_log`
+--
+
+DROP TABLE IF EXISTS `globalboss_spawn_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `globalboss_spawn_log` (
+  `BossAutoID` int(11) NOT NULL COMMENT 'Mã quản lý boss sinh ra, mỗi năm lại recyle',
+  `BossID` int(11) NOT NULL COMMENT 'Mã boss, tự sinh',
+  `KindID` int(11) DEFAULT 0 COMMENT 'Loại phòng 0 la thả all',
+  `FishKind` int(11) NOT NULL COMMENT 'Mã model boss',
+  `MaxHp` int(11) NOT NULL COMMENT 'Máu boss',
+  `RoundTime` int(11) NOT NULL COMMENT 'Thời gian boss bơi 1 vòng giây',
+  `RoundCount` int(11) NOT NULL COMMENT 'Số lần boss bơi qua lại',
+  `Delay` int(11) NOT NULL COMMENT 'Thời gian delay mỗi lần thả ',
+  `BossCount` int(11) NOT NULL COMMENT 'Số lượng boss còn lại',
+  `TotalGoldHit` bigint(20) NOT NULL COMMENT 'Tổng tiền thưởng bắn boss',
+  `GoldHitMultiple` bigint(20) NOT NULL COMMENT 'Tiền thưởng mỗi lần bắn (',
+  `GoldHitRatio` double(20,0) NOT NULL COMMENT 'Tỉ lệ trúng boss',
+  `LastHitGold` bigint(20) NOT NULL COMMENT 'Tiền thưởng khi giết boss',
+  `DayStart` datetime NOT NULL COMMENT 'Ngày bắt đầu thả',
+  `DayEnd` datetime NOT NULL COMMENT 'Ngày kết thúc thả',
+  `TimeStart` int(11) NOT NULL COMMENT 'Móc thời gian thả Phút',
+  `TimeEnd` int(11) NOT NULL COMMENT 'Móc thời gian kết thúcPhút',
+  `SpawnTime` datetime DEFAULT NULL COMMENT 'Thời gian boss được thả',
+  PRIMARY KEY (`BossAutoID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `globalboss_spawn_log`
+--
+
+LOCK TABLES `globalboss_spawn_log` WRITE;
+/*!40000 ALTER TABLE `globalboss_spawn_log` DISABLE KEYS */;
+/*!40000 ALTER TABLE `globalboss_spawn_log` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `listfishdie_log`
+--
+
+DROP TABLE IF EXISTS `listfishdie_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `listfishdie_log` (
+  `UserID` bigint(20) NOT NULL,
+  `KindID` int(11) NOT NULL,
+  `MatchID` int(11) NOT NULL,
+  `FishKind` int(11) NOT NULL,
+  `FishCount` int(11) DEFAULT NULL,
+  `BulletCount` int(11) DEFAULT NULL,
+  `UserPayMoney` int(11) DEFAULT NULL,
+  `UserEarnMoney` int(11) DEFAULT NULL,
+  `UpdateTime` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `listfishdie_log`
+--
+
+LOCK TABLES `listfishdie_log` WRITE;
+/*!40000 ALTER TABLE `listfishdie_log` DISABLE KEYS */;
+/*!40000 ALTER TABLE `listfishdie_log` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `login_log`
+--
+
+DROP TABLE IF EXISTS `login_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `login_log` (
+  `UserID` int(11) NOT NULL,
+  `Token` text DEFAULT NULL COMMENT 'Mã token user dùng DN',
+  `CreateDate` datetime NOT NULL COMMENT 'Thời gian user login',
+  `IP` text DEFAULT NULL COMMENT 'Đĩa chỉ ip của user',
+  `ServerID` int(11) DEFAULT NULL COMMENT 'ServerID mà user Login',
+  `ChannelID` int(11) DEFAULT NULL COMMENT 'Kênh đăng nhập',
+  `ProviderID` int(11) DEFAULT NULL COMMENT 'Loại Provider, 0 = origin, 1 = FB',
+  `PlatformID` int(11) DEFAULT NULL COMMENT 'Loai Platform 0: web, 1 android, 2 IOS'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `login_log`
+--
+
+LOCK TABLES `login_log` WRITE;
+/*!40000 ALTER TABLE `login_log` DISABLE KEYS */;
+/*!40000 ALTER TABLE `login_log` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `moneytransfer_log`
+--
+
+DROP TABLE IF EXISTS `moneytransfer_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `moneytransfer_log` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `UserID` bigint(20) DEFAULT NULL,
+  `ReasonID` int(11) DEFAULT NULL COMMENT 'Mã lý do thực hiện',
+  `ServerID` int(11) DEFAULT NULL COMMENT 'Mã server',
+  `ServerTrackID` int(11) DEFAULT NULL COMMENT 'Mã phát sinh khi user login 0-2ty',
+  `ChannelID` int(11) DEFAULT NULL COMMENT 'Mã Kênh',
+  `ProviderID` int(11) DEFAULT NULL COMMENT 'Mã loại hình login\r\n',
+  `PlatformID` int(11) DEFAULT NULL COMMENT 'Ma platform , 0 = web, 1 = android, 2 = ios',
+  `KindID` int(11) DEFAULT NULL COMMENT 'Loại phòng',
+  `MoneyTransfer` bigint(20) DEFAULT NULL COMMENT 'Tiền user muốn thay đổi',
+  `MoneyBefore` bigint(20) DEFAULT NULL COMMENT 'Tiền trước khi user thay đổi',
+  `MoneyAfter` bigint(20) DEFAULT NULL COMMENT 'Tiền sau khi user thay đổi',
+  `UpdateTime` datetime DEFAULT NULL COMMENT 'Thời gian thực thi',
+  `Description` text DEFAULT NULL COMMENT 'Mô tả lý do ',
+  `ActionType` int(11) DEFAULT NULL COMMENT 'Loại giao dich, 0 = đem tiền vào game, 1 = đem tiền ra game',
+  `ErrorCode` int(11) DEFAULT NULL COMMENT 'Mã lỗi',
+  `ErrorDescription` text DEFAULT NULL COMMENT 'Mô tả lỗi',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `moneytransfer_log`
+--
+
+LOCK TABLES `moneytransfer_log` WRITE;
+/*!40000 ALTER TABLE `moneytransfer_log` DISABLE KEYS */;
+/*!40000 ALTER TABLE `moneytransfer_log` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `onlineaward_log`
+--
+
+DROP TABLE IF EXISTS `onlineaward_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `onlineaward_log` (
+  `UserID` bigint(20) NOT NULL,
+  `AwardID` int(11) NOT NULL,
+  `TimeLeft` int(11) DEFAULT NULL COMMENT 'Thời gian còn lại',
+  `Createdate` date NOT NULL,
+  `AwardMoney` bigint(20) DEFAULT NULL COMMENT 'Tiền thực nhận',
+  `AwardMoneyCfg` bigint(20) DEFAULT NULL COMMENT 'Tiền config',
+  `LimitedGold` bigint(20) DEFAULT NULL COMMENT 'Tiền giới hạn',
+  `UpdateTime` datetime DEFAULT NULL COMMENT 'Thời gian làm mới của Record',
+  `TotalMoney` bigint(20) DEFAULT NULL,
+  `WebMoney` bigint(20) DEFAULT NULL,
+  `GameMoney` bigint(20) DEFAULT NULL,
+  `ChannelID` int(11) DEFAULT NULL COMMENT 'Kênh đăng nhập',
+  `ProviderID` int(11) DEFAULT NULL COMMENT 'Loại Provider, 0 = origin, 1 = FB',
+  `PlatformID` int(11) DEFAULT NULL COMMENT 'Loai Platform 0: web, 1 android, 2 IOS',
+  `IsGet` int(11) DEFAULT NULL COMMENT 'Đã nhận chưa',
+  PRIMARY KEY (`UserID`,`AwardID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `onlineaward_log`
+--
+
+LOCK TABLES `onlineaward_log` WRITE;
+/*!40000 ALTER TABLE `onlineaward_log` DISABLE KEYS */;
+/*!40000 ALTER TABLE `onlineaward_log` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `outgame_log`
+--
+
+DROP TABLE IF EXISTS `outgame_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `outgame_log` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `UserID` bigint(20) NOT NULL,
+  `ServerId` int(11) DEFAULT NULL,
+  `DeskId` int(11) DEFAULT NULL,
+  `KindID` int(11) DEFAULT NULL,
+  `MoneyIn` bigint(20) DEFAULT NULL,
+  `MoneyOut` bigint(20) DEFAULT NULL,
+  `MoneyChange` bigint(20) DEFAULT NULL,
+  `TimeIn` datetime DEFAULT NULL,
+  `TimeOut` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `outgame_log`
+--
+
+LOCK TABLES `outgame_log` WRITE;
+/*!40000 ALTER TABLE `outgame_log` DISABLE KEYS */;
+/*!40000 ALTER TABLE `outgame_log` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'bc68_log'
+--
+/*!50003 DROP PROCEDURE IF EXISTS `dailyaward_log_Check` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `dailyaward_log_Check`(IN `tbls` TEXT, IN `uid` BIGINT)
+BEGIN
+	
+SET @t = CONCAT('SELECT UserID FROM ',tbls,' where UserID = ',uid);
+PREPARE stmt from @t;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `dailyaward_log_CheckAndGet` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `dailyaward_log_CheckAndGet`(IN `tbls` TEXT, IN `uid` BIGINT)
+BEGIN
+	
+SET @t = CONCAT('SELECT UserID FROM ',tbls,' where UserID = ',uid);
+PREPARE stmt from @t;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `Event_CreateLogTable` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `Event_CreateLogTable`()
+BEGIN
+
+SET @yyyy_mm_dd=DATE_FORMAT(DATE_ADD(now(),INTERVAL 1 DAY),'%Y_%m_%d');
+SET @t = CONCAT('CREATE TABLE IF NOT EXISTS `outgame_log','_',@yyyy_mm_dd,'`like outgame_log');
+PREPARE stmt from @t;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
+SET @t = CONCAT('CREATE TABLE IF NOT EXISTS `moneytransfer_log','_',@yyyy_mm_dd,'`like moneytransfer_log');
+PREPARE stmt from @t;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
+SET @t = CONCAT('CREATE TABLE IF NOT EXISTS `globalboss_spawn_log','_',@yyyy_mm_dd,'`like globalboss_spawn_log');
+PREPARE stmt from @t;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
+SET @t = CONCAT('CREATE TABLE IF NOT EXISTS `listfishdie_log','_',@yyyy_mm_dd,'`like listfishdie_log');
+PREPARE stmt from @t;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
+SET @t = CONCAT('CREATE TABLE IF NOT EXISTS `login_log','_',@yyyy_mm_dd,'`like login_log');
+PREPARE stmt from @t;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
+SET @t = CONCAT('CREATE TABLE IF NOT EXISTS `dailyaward_log','_',@yyyy_mm_dd,'`like dailyaward_log');
+PREPARE stmt from @t;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
+SET @t = CONCAT('CREATE TABLE IF NOT EXISTS `onlineaward_log','_',@yyyy_mm_dd,'`like onlineaward_log');
+PREPARE stmt from @t;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-06-06 11:09:02

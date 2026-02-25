@@ -1,0 +1,4 @@
+INSERT INTO bc68.masterstatus (ServerID, IP, UpdateTime, CCU, PortR, PortWS, PortWSS) VALUES (483016, 's1.gamebaionline.club', '2018-05-09 10:29:19', 1, 0, 3018, 8443);
+INSERT INTO bc68.masterstatus (ServerID, IP, UpdateTime, CCU, PortR, PortWS, PortWSS) VALUES (483018, 's1.gamebaionline.club', '2018-04-23 13:30:33', 0, 0, 3018, 8443);
+INSERT INTO bc68.masterstatus (ServerID, IP, UpdateTime, CCU, PortR, PortWS, PortWSS) VALUES (483021, 's1.gamebaionline.club', '2018-04-20 13:24:52', 0, 0, 3018, 8443);
+INSERT INTO bc68.masterstatus (ServerID, IP, UpdateTime, CCU, PortR, PortWS, PortWSS) VALUES (483025, 's1.gamebaionline.club', '2018-04-20 11:40:12', 0, 0, 3018, 8443);

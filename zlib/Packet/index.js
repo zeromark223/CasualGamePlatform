@@ -1,0 +1,39 @@
+/**
+ * Created by ngocnpt on 24/06/2016.
+ */
+module.exports = {
+    Struct: require('./Struct'),
+    LoginResponse: require('./LoginResponse'),
+    ListUserInDeskResponse: require('./ListUserInDeskResponse'),
+    UserCome: require('./UserCome'),
+    ShowMsg: require('./ShowMsg'),
+    UserFire: require('./UserFire'),
+    SpawnFish: require('./SpawnFish'),
+    CatchFish: require('./CatchFish'),
+    UserLeft: require('./UserLeft'),
+    SpawnParadeFish: require('./SpawnParadeFish'),
+    SkillInfoResponse: require('./SkillInfoResponse'),
+    UseSkillResponse: require('./UseSkillResponse'),
+    SkillAppearResponse: require('./SkillAppearResponse'),
+    ClearFish: require('./ClearFish'),
+    KickUserResponse: require('./KickUserResponse'),
+    SpawnBossFish: require('./SpawnBossFish'),
+    SpawnCrowdedFish: require('./SpawnCrowdedFish'),
+    CatchRedFish: require('./CatchRedFish'),
+    UpdateBossHPResponse: require('./UpdateBossHPResponse'),
+    BossDie: require('./BossDie'),
+    SpawnParadeFish_REALTIME: require('./SpawnParadeFish_REALTIME'),
+    HitFishEffect: require('./HitFishEffect'),
+    PingPong: require('./PingPong'),
+    PlayRoomEffect: require('./PlayRoomEffect'),
+    StopRoomEffect: require('./StopRoomEffect'),
+    GlobalBossUseSkill: require('./GlobalBossUseSkill'),
+    UserChat: require('./UserChat'),
+
+    ListUserInDeskResponse_2D: require('./ListUserInDeskResponse_2D'),
+    SpawnParadeFish_2D: require('./SpawnParadeFish_2D'),
+    SpawnFish_2D: require('./SpawnFish_2D'),
+    UserCome_2D: require('./UserCome_2D'),
+    SpawnCrowdedFish_2D: require('./SpawnCrowdedFish_2D'),
+};
+

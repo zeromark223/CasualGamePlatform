@@ -1,0 +1,4 @@
+INSERT INTO bc68_log.listfishdie_log_2018_04_09 (UserID, KindID, MatchID, FishKind, FishCount, BulletCount, UserPayMoney, UserEarnMoney, UpdateTime) VALUES (71467, 1, 1, 4, 1, 1, 100, 500, '2018-04-09 14:19:01');
+INSERT INTO bc68_log.listfishdie_log_2018_04_09 (UserID, KindID, MatchID, FishKind, FishCount, BulletCount, UserPayMoney, UserEarnMoney, UpdateTime) VALUES (71467, 1, 1, 6, 1, 1, 100, 800, '2018-04-09 14:19:01');
+INSERT INTO bc68_log.listfishdie_log_2018_04_09 (UserID, KindID, MatchID, FishKind, FishCount, BulletCount, UserPayMoney, UserEarnMoney, UpdateTime) VALUES (71467, 1, 1, 3, 1, 1, 100, 400, '2018-04-09 14:19:01');
+INSERT INTO bc68_log.listfishdie_log_2018_04_09 (UserID, KindID, MatchID, FishKind, FishCount, BulletCount, UserPayMoney, UserEarnMoney, UpdateTime) VALUES (71467, 1, 1, 1, 2, 2, 200, 400, '2018-04-09 14:19:01');

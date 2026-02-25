@@ -1,0 +1,1 @@
+INSERT INTO bc68.globalboss (BossID, KindID, FishKind, MaxHp, RoundTime, RoundCount, Delay, BossCount, TotalGoldHit, GoldHitMultiple, GoldHitRatio, LastHitGold, DayStart, DayEnd, TimeStart, TimeEnd) VALUES (1, 0, 35, 100000, 60, 1, 0, 933623, 500000, 10, 0.1, 10000000, '2018-03-24 00:00:00', '2019-03-24 00:00:00', 0, 1440);

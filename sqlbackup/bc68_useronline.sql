@@ -1,0 +1,2 @@
+INSERT INTO bc68.useronline (UserID, GameID, ServerID, UpdateTime) VALUES (2, 0, 483016, '2018-05-07 15:42:24');
+INSERT INTO bc68.useronline (UserID, GameID, ServerID, UpdateTime) VALUES (2, 3, 2231231, '2018-05-07 15:17:13');

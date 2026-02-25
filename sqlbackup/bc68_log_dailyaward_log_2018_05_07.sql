@@ -1,0 +1,4 @@
+INSERT INTO bc68_log.dailyaward_log_2018_05_07 (UserID, Createdate, AwardMoney, AwardBounding, TotalMoney, WebMoney, GameMoney, ChannelID, ProviderID, PlatformID, IsGet) VALUES (2, '2018-05-07', 0, 0, 2621990, 0, 2621990, 0, 0, 0, 0);
+INSERT INTO bc68_log.dailyaward_log_2018_05_07 (UserID, Createdate, AwardMoney, AwardBounding, TotalMoney, WebMoney, GameMoney, ChannelID, ProviderID, PlatformID, IsGet) VALUES (15, '2018-05-07', 0, 0, 2258990, 0, 2258990, 0, 0, 0, 0);
+INSERT INTO bc68_log.dailyaward_log_2018_05_07 (UserID, Createdate, AwardMoney, AwardBounding, TotalMoney, WebMoney, GameMoney, ChannelID, ProviderID, PlatformID, IsGet) VALUES (18, '2018-05-07', 0, 0, 61472550, 0, 61472550, 0, 0, 0, 0);
+INSERT INTO bc68_log.dailyaward_log_2018_05_07 (UserID, Createdate, AwardMoney, AwardBounding, TotalMoney, WebMoney, GameMoney, ChannelID, ProviderID, PlatformID, IsGet) VALUES (79, '2018-05-07', 0, 0, 500000, 0, 500000, 0, 0, 0, 0);

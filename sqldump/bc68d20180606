@@ -1,0 +1,1256 @@
+-- MySQL dump 10.16  Distrib 10.3.7-MariaDB, for Linux (x86_64)
+--
+-- Host: localhost    Database: bc68
+-- ------------------------------------------------------
+-- Server version	10.3.7-MariaDB-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `broadcast`
+--
+
+DROP TABLE IF EXISTS `broadcast`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `broadcast` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Text` text DEFAULT NULL COMMENT 'Nội dung',
+  `Url` text DEFAULT NULL COMMENT 'Link',
+  `LangCode` int(11) DEFAULT NULL COMMENT 'Mã ngôn ngữ nhận dc',
+  `Priority` int(11) DEFAULT NULL COMMENT 'Độ ưu tiên 0-255, 0 thấp nhất',
+  `GameID` int(11) DEFAULT NULL COMMENT 'GameID muốn gửi broadcast',
+  `Interval` int(11) DEFAULT NULL COMMENT 'Thời gian lặp lại',
+  `StartTime` datetime DEFAULT NULL COMMENT 'Thời gian bắt đầu',
+  `EndTime` datetime DEFAULT NULL COMMENT 'Thời gian kết thúc',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `broadcast`
+--
+
+LOCK TABLES `broadcast` WRITE;
+/*!40000 ALTER TABLE `broadcast` DISABLE KEYS */;
+INSERT INTO `broadcast` VALUES (1,'Xin chào mấy anh đợp trai','https://www.facebook.com/',0,0,0,60,'2018-04-26 14:07:22','2019-04-26 14:07:25'),(2,'Hello dumbass !','https://www.facebook.com/',1,0,0,60,'2018-04-26 14:07:27','2019-04-26 14:07:30');
+/*!40000 ALTER TABLE `broadcast` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `commonconfig`
+--
+
+DROP TABLE IF EXISTS `commonconfig`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `commonconfig` (
+  `configcode` varchar(50) NOT NULL,
+  `configvalue` text DEFAULT NULL,
+  PRIMARY KEY (`configcode`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `commonconfig`
+--
+
+LOCK TABLES `commonconfig` WRITE;
+/*!40000 ALTER TABLE `commonconfig` DISABLE KEYS */;
+/*!40000 ALTER TABLE `commonconfig` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `eventconfig`
+--
+
+DROP TABLE IF EXISTS `eventconfig`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `eventconfig` (
+  `EventCode` varchar(50) NOT NULL,
+  `StartTime` datetime DEFAULT NULL COMMENT 'Thời gian diễn ra sự kiện',
+  `EndTime` datetime DEFAULT NULL COMMENT 'Thời gian diễn ra sự kiện',
+  `StartDisplayTime` datetime DEFAULT NULL COMMENT 'Thời gian hiện top trong game',
+  `EndDisplayTime` datetime DEFAULT NULL COMMENT 'Thời gian hiện top trong game',
+  `EventName` text DEFAULT NULL COMMENT 'Tên Event đa ngôn ngữ (JSON)',
+  `Enable` int(1) DEFAULT NULL COMMENT 'Bật tắt',
+  `Config` text DEFAULT NULL COMMENT 'Event Config JSON',
+  `DataKey` text DEFAULT NULL COMMENT 'Key lưu data và lấy data top',
+  PRIMARY KEY (`EventCode`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eventconfig`
+--
+
+LOCK TABLES `eventconfig` WRITE;
+/*!40000 ALTER TABLE `eventconfig` DISABLE KEYS */;
+INSERT INTO `eventconfig` VALUES ('HuntAndFun','2017-05-01 17:36:29','2019-05-01 17:36:29','2017-05-01 17:36:29','2019-05-01 17:36:29','{\r\n    \"userMsg\": \"Săn Vui Thưởng Khủng\",\r\n    \"userMsgEn\": \"Hunt And Fun\"\r\n  }',1,'{\"FishList\":[{\"FishKind\":\"0\",\"Ratio\":\"2\"}]}','EVL:HuntAndFun:Data'),('KingOfTheSea','2017-05-01 17:36:29','2019-05-01 17:36:29','2017-05-01 17:36:29','2019-05-01 17:36:29','{\r\n    \"userMsg\": \"Vua Biển Cả\",\r\n    \"userMsgEn\": \"King Of The Sea\"\r\n  }',1,'{}','EVL:KingOfTheSea:Data'),('RandomHour','2017-05-01 17:35:29','2019-05-01 17:35:29','2017-05-01 17:35:29','2019-05-01 17:35:29','{\r\n    \"userMsg\": \"Săn Cá Giờ Vàng\",\r\n    \"userMsgEn\": \"Random Hour\"\r\n  }',1,'{\"FishList\":[{\"FishKind\":\"34\",\"FishMultiple\":\"200\",\"MaxFishMultiple\":\"500\",\"Interval\":\"4000\",\"FishCount\":\"1\",\"FishMaxCount\":\"1\"}]}',''),('SeaHunter','2017-05-01 17:36:29','2019-05-01 17:36:29','2017-05-01 17:36:29','2019-05-01 17:36:29','{\r\n    \"userMsg\": \"Thợ Săn Đại Dương\",\r\n    \"userMsgEn\": \"Sea Hunter\"\r\n  }',1,'{}','EVL:SeaHunter:Data');
+/*!40000 ALTER TABLE `eventconfig` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `fishconfig`
+--
+
+DROP TABLE IF EXISTS `fishconfig`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `fishconfig` (
+  `FishKind` int(11) NOT NULL,
+  `FishName` text DEFAULT NULL,
+  `Speed` int(11) DEFAULT NULL,
+  `FishMultiple` int(11) DEFAULT NULL,
+  `MaxFishMultiple` int(11) DEFAULT NULL,
+  `Width` int(11) DEFAULT NULL,
+  `Height` int(11) DEFAULT NULL,
+  `Deep` int(11) DEFAULT NULL,
+  PRIMARY KEY (`FishKind`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `fishconfig`
+--
+
+LOCK TABLES `fishconfig` WRITE;
+/*!40000 ALTER TABLE `fishconfig` DISABLE KEYS */;
+INSERT INTO `fishconfig` VALUES (0,'{\"vn\":\"Cá Ốc Sên\",\"en\":\"Snail fish\"}',5,2,2,50,40,0),(1,'{\"vn\":\"Cá Cỏ Xanh\",\"en\":\"Green Grass\"}',5,2,2,60,25,0),(2,'{\"vn\":\"Cá Cỏ Vàng\",\"en\":\"Golden Grass\"}',5,3,3,50,20,0),(3,'{\"vn\":\"Cá Mắt Lớn\",\"en\":\"Big Eye\"}',5,4,4,70,30,0),(4,'{\"vn\":\"Cá Dẹp Vàng\",\"en\":\"Goldfish\"}',5,5,5,60,60,0),(5,'{\"vn\":\"Cá Chú Hề\",\"en\":\"Fish Sticky\"}',5,6,6,110,40,0),(6,'{\"vn\":\"Cá Nhỏ\",\"en\":\"Small fish\"}',5,8,8,55,30,0),(7,'{\"vn\":\"Cá Xanh\",\"en\":\"Green fish\"}',5,9,9,70,40,0),(8,'{\"vn\":\"Cá Đèn Lồng\",\"en\":\"Fish Lantern\"}',5,10,10,70,100,0),(9,'{\"vn\":\"Cá Đèn Lồng Xanh\",\"en\":\"Blue Lanterns\"}',5,12,12,100,90,0),(10,'{\"vn\":\"Rùa Biển\",\"en\":\"Sea turtle\"}',4,15,15,80,40,0),(11,'{\"vn\":\"Cá Cánh Hoa\",\"en\":\"Fish Flower\"}',4,18,18,120,60,0),(12,'{\"vn\":\"Cá Bướm\",\"en\":\"Butterfly fish\"}',4,20,20,90,60,0),(13,'{\"vn\":\"Cá Khổng Tước\",\"en\":\"Confucius Fish\"}',4,25,25,140,40,0),(14,'{\"vn\":\"Cá Kiếm\",\"en\":\"Swordfish\"}',4,30,30,170,95,0),(15,'{\"vn\":\"Cá Dơi\",\"en\":\"Bat Bat\"}',3,40,40,150,100,0),(16,'{\"vn\":\"Cá Mập Bạc\",\"en\":\"Silver Shark\"}',3,50,50,280,110,0),(17,'{\"vn\":\"Cá Mập Vàng\",\"en\":\"Shark Gold\"}',3,75,75,300,130,0),(18,'{\"vn\":\"Gậy Kim Cô\",\"en\":\"Kim Coi\"}',3,100,100,110,70,0),(19,'{\"vn\":\"Cá Voi Vua\",\"en\":\"Whale King\"}',3,120,120,140,70,0),(20,'{\"vn\":\"Rồng Bạc\",\"en\":\"Silver Dragon\"}',2,200,200,300,100,0),(21,'{\"vn\":\"Rồng Vàng\",\"en\":\"Golden Dragon\"}',2,300,300,300,80,0),(22,'{\"vn\":\"Cỏ Biển\",\"en\":\"Seagrass\"}',3,10,20,150,70,0),(23,'{\"vn\":\"Đạn Nổ\",\"en\":\"Bullets\"}',4,1,1000,120,120,0),(24,'{\"vn\":\"Tháp Năng Lượng\",\"en\":\"Energy Tower\"}',2,80,120,120,160,0),(25,'{\"vn\":\"Cá Nhà Táng\",\"en\":\"Spermaceti\"}',2,100,140,150,100,0),(26,'{\"vn\":\"Cá Tam Nguyên 3\",\"en\":\"Tam Nguyen Fish 3\"}',3,36,65,250,250,0),(27,'{\"vn\":\"Cá Tam Nguyên 4\",\"en\":\"Tam Nguyen Fish 4\"}',3,150,170,270,270,0),(28,'{\"vn\":\"Cá Tam Nguyên Lớn\",\"en\":\"Big Tam\"}',3,30,70,150,160,0),(29,'{\"vn\":\"Cá Tử Hỉ Lớn\",\"en\":\"Big Cats\"}',3,85,95,300,130,0),(30,'{\"vn\":\"Vua Cá Đỏ\",\"en\":\"The Red King\"}',4,1,1,170,180,0),(31,'{\"vn\":\"Cóc xanh lè\",\"en\":\"Green hook\"}',1,100,100,240,240,0),(32,'{\"vn\":\"Cóc vàng khè\",\"en\":\"Yellow crane\"}',1,200,200,240,240,0),(33,'{\"vn\":\"Boss bạch tuộc đỏ\",\"en\":\"Boss red octopus\"}',1,5000,5000,120,230,0),(34,'{\"vn\":\"Boss bạch tuộc vàng\",\"en\":\"Boss Golden octopus \"}',2,5000,5000,120,230,0),(35,'{\"vn\":\"Boss người cá nam\",\"en\":\"Boss Siren male\"}',2,4500,4500,100,200,0),(36,'{\"vn\":\"Boss người cá nữ\",\"en\":\"Boss Siren\"}',2,7500,7500,130,250,0);
+/*!40000 ALTER TABLE `fishconfig` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `gamecommonconfig`
+--
+
+DROP TABLE IF EXISTS `gamecommonconfig`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `gamecommonconfig` (
+  `ConfigID` text NOT NULL,
+  `ConfigJSON` text DEFAULT NULL,
+  `UpdateDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`ConfigID`(255))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `gamecommonconfig`
+--
+
+LOCK TABLES `gamecommonconfig` WRITE;
+/*!40000 ALTER TABLE `gamecommonconfig` DISABLE KEYS */;
+INSERT INTO `gamecommonconfig` VALUES ('DailyAward','\'\'','2018-04-11 11:52:38'),('Mission','\'\'','2018-04-11 11:53:58'),('OnlineAward','\'\'','2018-04-11 11:53:37');
+/*!40000 ALTER TABLE `gamecommonconfig` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `globalboss`
+--
+
+DROP TABLE IF EXISTS `globalboss`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `globalboss` (
+  `BossID` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã boss, tự sinh',
+  `KindID` int(11) DEFAULT 0 COMMENT 'Loại phòng 0 la thả all',
+  `FishKind` int(11) NOT NULL COMMENT 'Mã model boss',
+  `MaxHp` int(11) NOT NULL COMMENT 'Máu boss',
+  `RoundTime` int(11) NOT NULL COMMENT 'Thời gian boss bơi 1 vòng giây',
+  `RoundCount` int(11) NOT NULL COMMENT 'Số lần boss bơi qua lại',
+  `Delay` int(11) NOT NULL COMMENT 'Thời gian delay mỗi lần thả ',
+  `BossCount` int(11) NOT NULL COMMENT 'Số lượng boss',
+  `TotalGoldHit` bigint(20) NOT NULL COMMENT 'Tổng tiền thưởng bắn boss',
+  `GoldHitMultiple` bigint(20) NOT NULL COMMENT 'Tiền thưởng mỗi lần bắn (',
+  `GoldHitRatio` double(10,10) NOT NULL COMMENT 'Tỉ lệ trúng boss',
+  `LastHitGold` bigint(20) NOT NULL COMMENT 'Tiền thưởng khi giết boss',
+  `DayStart` datetime NOT NULL COMMENT 'Ngày bắt đầu thả',
+  `DayEnd` datetime NOT NULL COMMENT 'Ngày kết thúc thả',
+  `TimeStart` int(11) NOT NULL COMMENT 'Móc thời gian thả Phút',
+  `TimeEnd` int(11) NOT NULL COMMENT 'Móc thời gian kết thúcPhút',
+  PRIMARY KEY (`BossID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `globalboss`
+--
+
+LOCK TABLES `globalboss` WRITE;
+/*!40000 ALTER TABLE `globalboss` DISABLE KEYS */;
+/*!40000 ALTER TABLE `globalboss` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `loginlog`
+--
+
+DROP TABLE IF EXISTS `loginlog`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `loginlog` (
+  `UserID` int(11) NOT NULL,
+  `Token` text DEFAULT NULL,
+  `CreateDate` datetime NOT NULL COMMENT 'Thời gian user login',
+  `Ip` text DEFAULT NULL COMMENT 'Đĩa chỉ ip của user',
+  `ServerID` int(11) DEFAULT NULL COMMENT 'ServerID mà user Login',
+  `ChannelID` int(11) DEFAULT NULL COMMENT 'Kênh đăng nhập',
+  `ProviderID` int(11) DEFAULT NULL COMMENT 'Loại Provider, 0 = origin, 1 = FB'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `loginlog`
+--
+
+LOCK TABLES `loginlog` WRITE;
+/*!40000 ALTER TABLE `loginlog` DISABLE KEYS */;
+/*!40000 ALTER TABLE `loginlog` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `masterstatus`
+--
+
+DROP TABLE IF EXISTS `masterstatus`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `masterstatus` (
+  `ServerID` int(11) NOT NULL,
+  `IP` text NOT NULL,
+  `UpdateTime` datetime NOT NULL,
+  `CCU` int(11) NOT NULL,
+  `PortR` int(11) NOT NULL,
+  `PortWS` int(11) NOT NULL,
+  `PortWSS` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `masterstatus`
+--
+
+LOCK TABLES `masterstatus` WRITE;
+/*!40000 ALTER TABLE `masterstatus` DISABLE KEYS */;
+/*!40000 ALTER TABLE `masterstatus` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `serverstatus`
+--
+
+DROP TABLE IF EXISTS `serverstatus`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `serverstatus` (
+  `ServerID` int(11) NOT NULL,
+  `IP` text NOT NULL,
+  `KindID` int(11) NOT NULL DEFAULT 0,
+  `UpdateTime` datetime NOT NULL,
+  `CCU` int(11) NOT NULL,
+  `MaxCCU` int(11) DEFAULT NULL,
+  `DeskCount` int(11) DEFAULT NULL,
+  `PortR` int(11) NOT NULL,
+  `PortWS` int(11) NOT NULL,
+  `PortWSS` int(11) NOT NULL,
+  `MoneyRequired` bigint(20) DEFAULT NULL,
+  `LevelRequired` int(11) DEFAULT NULL,
+  `GameID` int(11) DEFAULT 2
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `serverstatus`
+--
+
+LOCK TABLES `serverstatus` WRITE;
+/*!40000 ALTER TABLE `serverstatus` DISABLE KEYS */;
+/*!40000 ALTER TABLE `serverstatus` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
+  `UserID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `AccountID` varchar(64) NOT NULL,
+  `GameName` text NOT NULL,
+  `CreateDate` datetime NOT NULL,
+  `Lv` int(11) unsigned NOT NULL,
+  `Exp` bigint(20) unsigned NOT NULL,
+  `StockHandicap` float NOT NULL,
+  `TotalRecharge` bigint(20) DEFAULT 0 COMMENT 'Tong nap',
+  PRIMARY KEY (`UserID`) USING BTREE,
+  UNIQUE KEY `Account` (`AccountID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `useronline`
+--
+
+DROP TABLE IF EXISTS `useronline`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `useronline` (
+  `UserID` bigint(20) NOT NULL,
+  `GameID` int(11) NOT NULL COMMENT 'Master = 0, GameID = gameid đã define',
+  `ServerID` int(11) DEFAULT NULL,
+  `UpdateTime` datetime DEFAULT NULL,
+  PRIMARY KEY (`UserID`,`GameID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `useronline`
+--
+
+LOCK TABLES `useronline` WRITE;
+/*!40000 ALTER TABLE `useronline` DISABLE KEYS */;
+/*!40000 ALTER TABLE `useronline` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `wallet`
+--
+
+DROP TABLE IF EXISTS `wallet`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `wallet` (
+  `UserID` int(11) NOT NULL,
+  `Money` bigint(20) NOT NULL,
+  `UpdateTime` datetime NOT NULL,
+  PRIMARY KEY (`UserID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wallet`
+--
+
+LOCK TABLES `wallet` WRITE;
+/*!40000 ALTER TABLE `wallet` DISABLE KEYS */;
+/*!40000 ALTER TABLE `wallet` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'bc68'
+--
+/*!50003 DROP FUNCTION IF EXISTS `sys_getDayMins` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` FUNCTION `sys_getDayMins`(`idate` datetime) RETURNS int(11)
+BEGIN	
+	RETURN HOUR(`idate`)*60+MINUTE(`idate`) ;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `CheckLogin` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `CheckLogin`( IN `AID` text,in displayname text,in sid int,in gid int )
+BEGIN	
+SET @uid := 0;
+SELECT @uid:=userid,user.* FROM `user` WHERE AccountID = AID;
+IF (FOUND_ROWS() <= 0) THEN
+		INSERT INTO `user`(AccountID,GameName,CreateDate,Lv,Exp,StockHandicap,TotalRecharge)
+		VALUES(AID,displayname,NOW(),1,0,1,0);
+		SELECT @uid:=userid,user.* FROM `user` WHERE AccountID = AID;
+		INSERT INTO wallet(UserID,Money,UpdateTime)
+		VALUES(@uid,0,NOW());
+END IF;	
+	UPDATE  `user`
+	SET GameName = displayname
+	WHERE UserID =@uid;
+	CALL userOnline_Insert(@uid,sid,gid);		
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `CheckLoginGame` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'IGNORE_SPACE,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `CheckLoginGame`(IN uid int, IN sid int, IN gid int)
+BEGIN	
+	SELECT * FROM `user` WHERE UserID = uid LIMIT 1;
+	CALL userOnline_Insert(uid,sid,gid);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `CheckLogin_test` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `CheckLogin_test`( IN `AID` text,in sid int,in gid int )
+BEGIN	
+SET @uid := 0;
+SELECT @uid:=userid,user.* FROM `user` WHERE AccountID = AID;
+IF (FOUND_ROWS() <= 0) THEN
+
+		INSERT INTO `user`(AccountID,GameName,CreateDate,Lv,Exp,StockHandicap,TotalRecharge)
+		VALUES(AID,'',NOW(),1,0,1,0);
+		SELECT @uid:=userid,user.* FROM `user` WHERE AccountID = AID;
+		INSERT INTO wallet(UserID,Money,UpdateTime)
+		VALUES(@uid,0,NOW());
+END IF;	
+	CALL userOnline_Insert(@uid,sid,gid);		
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `eventconfig_GetAll` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `eventconfig_GetAll`()
+BEGIN	
+	SELECT * FROM eventconfig 
+	WHERE StartTime <=  NOW() AND EndTime >= Now() AND eventconfig.Enable = true;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `FishConfig_GetAll` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `FishConfig_GetAll`()
+BEGIN
+	SELECT FishKind,FishName,Speed,FishMultiple,MaxFishMultiple,Width,Height,Deep FROM fishconfig;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `FishConfig_Insert` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `FishConfig_Insert`(in fid int,in fname text,in fspeed int,in fmul int,in fmulmax int,in fwidth int,in fheight int,in fdeep int)
+BEGIN
+	INSERT Into fishconfig(FishKind,FishName,Speed,FishMultiple,MaxFishMultiple,Width,Height,Deep)
+	values(fid,fname,fspeed,fmul,fmulmax,fwidth,fheight,fdeep);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `GlobalBoss_GetByGame` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `GlobalBoss_GetByGame`()
+BEGIN	
+SELECT BossID,KindID,FishKind,MaxHp,RoundTime,RoundCount,Delay,BossCount,TotalGoldHit,GoldHitMultiple,GoldHitRatio,LastHitGold
+FROM globalboss
+WHERE DayStart <=  NOW() AND DayEnd >= Now()
+AND TimeStart <= sys_getDayMins(now()) AND TimeEnd >= sys_getDayMins(now());
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `GlobalBoss_SpawnBoss` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `GlobalBoss_SpawnBoss`( IN ibossId INT )
+BEGIN
+
+SELECT
+	BossID,
+	KindID,
+	FishKind,
+	MaxHp,
+	RoundTime,
+	RoundCount,
+	Delay,
+	BossCount,
+	TotalGoldHit,
+	GoldHitMultiple,
+	GoldHitRatio,
+	LastHitGold,
+	DayStart,
+	DayEnd,
+	TimeStart,
+	TimeEnd 
+FROM
+	globalboss 
+WHERE
+	BossID = ibossId 
+	AND BossCount > 1 ;
+	UPDATE globalboss
+	SET BossCount = BossCount -1
+	WHERE BossID = ibossId ;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `masterstatus_start` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `masterstatus_start`( IN sid INT, IN inip text, IN inccu INT, IN inportr INT, IN inportws INT, IN inportwss INT )
+BEGIN
+IF
+	EXISTS ( SELECT 1 FROM masterstatus WHERE ServerID = sid ) THEN BEGIN
+	UPDATE masterstatus
+	set IP = inip,PortR = inportr,PortWS = inportws,PortWSS = inportwss;
+	CALL masterstatus_update ( sid, inccu );
+
+END; ELSE BEGIN
+	INSERT INTO masterstatus ( ServerId, IP, UpdateTime, CCU, PortR, PortWS, PortWSS )
+	VALUES
+		( sid, inip, now( ), inccu, inportr, inportws, inportwss );
+	
+	END ;
+		END IF;
+		call userOnline_CleatAtStartServer(sid,0);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `masterstatus_update` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `masterstatus_update`(in sid int,in iccu int)
+BEGIN
+	UPDATE masterstatus
+	SET UpdateTime = NOW(),CCU = iccu
+	WHERE ServerID = sid;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `serverstatus_getAllByGame` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `serverstatus_getAllByGame`()
+BEGIN
+	SELECT * from serverstatus
+	WHERE TIME_TO_SEC(TIMEDIFF(NOW(),UpdateTime)) < 30 ;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `serverstatus_start` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'IGNORE_SPACE,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `serverstatus_start`(IN sid           int, IN inip text, IN ikindid int, IN inccu int, IN inportr int,
+                                    IN inportws      int, IN inportwss int, IN ideskcount int, IN imaxccu int,
+                                    IN imoneyrequire bigint, IN ilevelrequire int, IN igid INT)
+BEGIN
+    IF
+    EXISTS(SELECT 1
+           FROM serverstatus
+           WHERE ServerID = sid)
+    THEN BEGIN
+      UPDATE serverstatus
+      set IP          = inip,
+        KindID        = ikindid,
+        PortR         = inportr,
+        PortWS        = inportws,
+        PortWSS       = inportwss,
+        DeskCount     = ideskcount,
+        MaxCCU        = imaxccu,
+        MoneyRequired = imoneyrequire,
+        LevelRequired = ilevelrequire,
+        GameID = igid
+      WHERE ServerID = sid;
+      CALL serverstatus_update(sid, inccu);
+
+    END;
+    ELSE BEGIN
+      INSERT INTO serverstatus (ServerId, IP, KindID, UpdateTime, CCU, PortR, PortWS, PortWSS, DeskCount, MaxCCU, MoneyRequired, LevelRequired,GameID)
+      VALUES
+        (sid, inip, ikindid, now(), inccu, inportr, inportws, inportwss, ideskcount, imaxccu, imoneyrequire,
+         ilevelrequire,igid);
+
+    END;
+    END IF;
+    call userOnline_CleatAtStartServer(sid,igid);
+  END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `serverstatus_update` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `serverstatus_update`(in sid int,in iccu int)
+BEGIN
+	UPDATE serverstatus
+	SET UpdateTime = NOW(),CCU = iccu
+	WHERE ServerID = sid;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `userOnline_CleatAtStartServer` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `userOnline_CleatAtStartServer`(in sid int,in gid int)
+BEGIN
+	DELETE FROM useronline
+	WHERE ServerID = sid and gameid = gid;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `userOnline_GetAllBySID` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'IGNORE_SPACE,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `userOnline_GetAllBySID`(IN sid int)
+BEGIN
+	SELECT * FROM useronline where ServerID = sid;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `userOnline_Insert` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `userOnline_Insert`(in uid int,in sid int,in gid int)
+BEGIN	
+  DECLARE EXIT HANDLER FOR SQLEXCEPTION
+	SELECT 'Online' as onlineState;
+	INSERT INTO useronline(userid,gameid,serverid,updatetime)
+	VALUES(uid,gid,sid,now());
+	SELECT 'NoOnline' as onlineState;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `userOnline_Remove` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'IGNORE_SPACE,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `userOnline_Remove`(IN uid int, IN sid int, IN gid int)
+BEGIN
+    DELETE FROM useronline
+    WHERE UserID = uid and GameID = gid and ServerID = sid;
+
+  END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `wallet_AddMoney` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `wallet_AddMoney`(
+IN uid BIGINT,
+IN imoney BIGINT,
+IN reasonid INT,
+IN des text,
+IN cid INT,
+IN pid INT,
+IN plid INT,
+IN sid INT,
+IN stid INT,
+IN kid INT 
+)
+BEGIN
+IF
+	imoney >= 0 THEN
+BEGIN
+	
+	SET @BfMoney := 0;
+
+SET @AfMoney := 0;
+SELECT
+	Money 
+FROM
+	wallet 
+WHERE
+	UserID = uid INTO @BfMoney;
+UPDATE wallet 
+SET Money = Money + imoney,
+UpdateTime = NOW( ) 
+WHERE
+	UserID = uid;
+IF
+	ROW_COUNT( ) = 0 THEN
+		INSERT wallet ( UserID, Money, UpdateTime )
+	VALUES
+		( uid, imoney, NOW( ) );
+	
+END IF;
+SELECT
+	@AfMoney := Money,
+	wallet.* 
+FROM
+	wallet 
+WHERE
+	UserID = uid;
+CALL wallet_Log (
+	uid,
+	reasonid,
+	cid,
+	pid,
+	plid,
+	sid,
+	stid,
+	kid,
+	imoney,
+	@BfMoney,
+	@AfMoney,
+	des,
+	1,
+	0,
+	'' 
+);
+
+END;
+
+END IF;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `wallet_ChargeAll` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `wallet_ChargeAll`( 
+IN uid BIGINT, 
+in reasonid int,
+IN des text,
+IN cid INT,
+IN pid INT,
+IN plid INT,
+IN sid INT,
+IN stid INT,
+IN kid INT
+)
+BEGIN
+
+SET @CurMoney := 0;
+SET @AfMoney := 0;
+SET @ErrCode := 'NoWallet';
+SET @RsCode := 0;
+SET @Rs := 'Thành công';
+SELECT	
+	Money,'NoErr'
+FROM
+	`wallet`
+WHERE
+	UserID = uid LIMIT 1 into @CurMoney,@ErrCode;	
+
+
+IF @ErrCod = 'NoWallet' THEN
+	  SET @RsCode := 1;
+		SET @Rs := 'ChargeFail User không có ví';	
+ELSE
+	UPDATE wallet 
+	SET Money = Money-@CurMoney
+	WHERE
+		UserID = uid 
+		AND Money >= @CurMoney; 
+		
+	IF
+		ROW_COUNT( ) <= 0 AND @CurMoney > 0 THEN	
+		SET @CurMoney := 0;
+		SET @RsCode := 1;
+		SET @Rs := 'ChargeFail trừ tiền thất bại nosysn';	
+	END IF;
+END IF;
+	
+SELECT Money	FROM `wallet`	WHERE UserID = uid LIMIT 1 into @AfMoney; 
+
+call wallet_Log(
+			uid,
+			reasonid,
+			cid,
+			pid,
+			plid,
+			sid,
+			stid,
+			kid,
+			@CurMoney,
+			@CurMoney,
+			@AfMoney,
+			des,
+			0, 
+			@RsCode,
+			@Rs);
+SELECT @ErrCode as ErrCode,@CurMoney AS Money,@AfMoney as AfMoney;
+	
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `wallet_getAll` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `wallet_getAll`( IN uid BIGINT )
+BEGIN
+SET @CurMoney := 0;
+SET @ErrCode := 'NoWallet';
+SELECT	
+	Money,'NoErr'
+FROM
+	`wallet`
+WHERE
+	UserID = uid LIMIT 1 into @CurMoney,@ErrCode;
+SELECT
+	@ErrCode as ErrCode,@CurMoney AS Money;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `wallet_Log` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `wallet_Log`(
+IN uid BIGINT,
+IN rid INT,
+IN cid INT,
+IN pid INT,
+IN plid INT,
+IN sid INT,
+IN stid INT,
+IN kid INT,
+IN montran BIGINT,
+IN monbe BIGINT,
+IN monaf BIGINT,
+IN des text,
+IN actt INT,
+IN errcode INT,
+IN errdes text 
+)
+BEGIN
+
+SET @yyyy_mm_dd = DATE_FORMAT( now( ), '%Y_%m_%d' );
+SET @t = CONCAT(
+	'INSERT INTO bc68_log.`moneytransfer_log_',
+	@yyyy_mm_dd,
+	'`(UserID,
+	ReasonID,
+	ServerID,
+	ServerTrackID,
+	ChannelID,
+	ProviderID,
+	PlatformID,
+	KindID,
+	MoneyTransfer,
+	MoneyBefore,
+	MoneyAfter,
+	UpdateTime,
+	Description,
+	ActionType,
+	ErrorCode,
+	ErrorDescription)',
+	'values(',
+	uid,
+	',',
+	rid,	
+	',',
+	sid,
+	',',
+	stid,
+	',',
+	cid,
+	',',
+	pid,
+	',',
+	plid,
+	',',
+	kid,
+	',',
+	montran,
+	',',
+	monbe,
+	',',
+	monaf,
+	',\'',
+	now(),
+	'\',\'',
+	des,
+	'\',',
+	actt,
+	',',
+	errcode,
+	',\'',
+	errdes,
+	'\')' 
+	);
+PREPARE stmt 
+	FROM
+		@t;
+	EXECUTE stmt;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `wallet_RefundMoney` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `wallet_RefundMoney`( 
+IN uid BIGINT, 
+in reasonid int,
+IN des text,
+IN imoney BIGINT,
+IN cid INT,
+IN pid INT,
+IN plid INT,
+IN sid INT,
+IN stid INT,
+IN kid INT
+)
+BEGIN
+
+SET @CurMoney := 0;
+SET @AfMoney := 0;
+SET @ErrCode := 'NoWallet';
+SET @RsCode := 0;
+SET @Rs := 'Thành công';
+IF imoney < 0 THEN
+	SET @ErrCode := 'NoWallet' ;	
+	SET @RsCode := 1;
+	SET @Rs := 'RefundFail tiền refund âm';	
+ELSE
+	SELECT Money FROM `wallet`	WHERE UserID = uid LIMIT 1 into  @CurMoney; 
+	
+	UPDATE wallet 
+		SET Money = Money+imoney
+		WHERE	UserID = uid ;
+		
+	IF
+		ROW_COUNT( ) <= 0 THEN	
+				SET @ErrCode := 'NoWallet' ;	
+				SET @RsCode := 1;
+				SET @Rs := 'RefundFail User không có ví';			
+	END IF;
+		
+	
+END IF;
+
+SELECT Money	FROM `wallet`	WHERE UserID = uid LIMIT 1 into @AfMoney; 
+call wallet_Log(
+			uid,
+			reasonid,
+			cid,
+			pid,
+			plid,
+			sid,
+			stid,
+			kid,
+			imoney,
+			@CurMoney,
+			@AfMoney,
+			des,
+			1, 
+			@RsCode,
+			@Rs);
+			
+SELECT @ErrCode as ErrCode,@CurMoney AS Money,@AfMoney as AfMoney;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `wallet_UpdateMoneySafe` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'IGNORE_SPACE,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`192.168.1.%` PROCEDURE `wallet_UpdateMoneySafe`(IN uid bigint, IN imoney bigint, IN reasonid int, IN des text, IN cid int,
+                                        IN pid int, IN plid int, IN sid int, IN stid int, IN kid int)
+BEGIN
+    SET @BfMoney := 0;
+    SET @AfMoney := 0;
+    SELECT Money
+    FROM
+      wallet
+    WHERE
+      UserID = uid
+    INTO @BfMoney;
+    IF @BfMoney+imoney >= 0
+    THEN
+      UPDATE wallet
+      SET Money    = Money + imoney,
+        UpdateTime = NOW()
+      WHERE
+        UserID = uid AND Money >= @BfMoney; 
+      IF
+      ROW_COUNT() <> 0
+      THEN
+
+        SELECT
+          'noErr' as errCode,
+          @AfMoney := Money,
+          wallet.*
+        FROM
+          wallet
+        WHERE
+          UserID = uid;
+        CALL wallet_Log(
+            uid,
+            reasonid,
+            cid,
+            pid,
+            plid,
+            sid,
+            stid,
+            kid,
+            imoney, 
+            @BfMoney, 
+            @AfMoney, 
+            des,
+            1, 
+            0, 
+            ''
+        ); 
+      ELSE
+        SELECT 'updateFail' as errCode;
+      END IF;
+    ELSE
+      SELECT 'selectFail' as errCode;
+    END IF;
+  END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-06-06 11:09:14

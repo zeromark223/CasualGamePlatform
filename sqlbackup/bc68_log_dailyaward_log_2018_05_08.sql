@@ -1,0 +1,1 @@
+INSERT INTO bc68_log.dailyaward_log_2018_05_08 (UserID, Createdate, AwardMoney, AwardBounding, TotalMoney, WebMoney, GameMoney, ChannelID, ProviderID, PlatformID, IsGet) VALUES (37, '2018-05-08', 0, 0, 498830, 0, 498830, 0, 0, 0, 0);

@@ -1,0 +1,1 @@
+INSERT INTO bc68_log.onlineaward_log_2018_05_05 (UserID, AwardID, TimeLeft, Createdate, AwardMoney, AwardMoneyCfg, LimitedGold, UpdateTime, TotalMoney, WebMoney, GameMoney, ChannelID, ProviderID, PlatformID, IsGet) VALUES (7, 1, 0, '2018-05-05', 0, 500000, 50000000, '2018-05-05 17:52:30', 55888300, 0, 55888300, 0, 0, 0, 0);

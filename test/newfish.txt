@@ -1,0 +1,344 @@
+[
+   {
+      "FishKind":0,
+      "Name":"Cá Ốc Sên",
+      "Speed":5,
+      "FishMultiple":2,
+      "MaxFishMultiple":2,
+      "Width":55,
+      "Height":55
+   },
+   {
+      "FishKind":1,
+      "Name":"Cá Cỏ Xanh",
+      "Speed":5,
+      "FishMultiple":2,
+      "MaxFishMultiple":2,
+      "Width":60,
+      "Height":60
+   },
+   {
+      "FishKind":2,
+      "Name":"Cá Cỏ Vàng",
+      "Speed":5,
+      "FishMultiple":3,
+      "MaxFishMultiple":3,
+      "Width":80,
+      "Height":80
+   },
+   {
+      "FishKind":3,
+      "Name":"Cá Mắt Lớn",
+      "Speed":5,
+      "FishMultiple":4,
+      "MaxFishMultiple":4,
+      "Width":70,
+      "Height":70
+   },
+   {
+      "FishKind":4,
+      "Name":"Cá Dẹp Vàng",
+      "Speed":5,
+      "FishMultiple":5,
+      "MaxFishMultiple":5,
+      "Width":80,
+      "Height":80
+   },
+   {
+      "FishKind":5,
+      "Name":"Cá Chú Hề",
+      "Speed":5,
+      "FishMultiple":6,
+      "MaxFishMultiple":6,
+      "Width":90,
+      "Height":90
+   },
+   {
+      "FishKind":6,
+      "Name":"Cá Nhỏ",
+      "Speed":5,
+      "FishMultiple":8,
+      "MaxFishMultiple":8,
+      "Width":90,
+      "Height":90
+   },
+   {
+      "FishKind":7,
+      "Name":"Cá Xanh",
+      "Speed":5,
+      "FishMultiple":9,
+      "MaxFishMultiple":9,
+      "Width":120,
+      "Height":120
+   },
+   {
+      "FishKind":8,
+      "Name":"Cá Đèn Lồng",
+      "Speed":5,
+      "FishMultiple":10,
+      "MaxFishMultiple":10,
+      "Width":150,
+      "Height":150
+   },
+   {
+      "FishKind":9,
+      "Name":"Cá Đèn Lồng Xanh",
+      "Speed":5,
+      "FishMultiple":12,
+      "MaxFishMultiple":12,
+      "Width":110,
+      "Height":110
+   },
+   {
+      "FishKind":10,
+      "Name":"Rùa Biển",
+      "Speed":4,
+      "FishMultiple":15,
+      "MaxFishMultiple":15,
+      "Width":145,
+      "Height":145
+   },
+   {
+      "FishKind":11,
+      "Name":"Cá Cánh Hoa",
+      "Speed":4,
+      "FishMultiple":18,
+      "MaxFishMultiple":18,
+      "Width":120,
+      "Height":120
+   },
+   {
+      "FishKind":12,
+      "Name":"Cá Bướm",
+      "Speed":4,
+      "FishMultiple":20,
+      "MaxFishMultiple":20,
+      "Width":180,
+      "Height":180
+   },
+   {
+      "FishKind":13,
+      "Name":"Cá Khổng Tước",
+      "Speed":4,
+      "FishMultiple":25,
+      "MaxFishMultiple":25,
+      "Width":255,
+      "Height":255
+   },
+   {
+      "FishKind":14,
+      "Name":"Cá Kiếm",
+      "Speed":4,
+      "FishMultiple":30,
+      "MaxFishMultiple":30,
+      "Width":250,
+      "Height":250
+   },
+   {
+      "FishKind":15,
+      "Name":"Cá Dơi",
+      "Speed":3,
+      "FishMultiple":40,
+      "MaxFishMultiple":40,
+      "Width":180,
+      "Height":180
+   },
+   {
+      "FishKind":16,
+      "Name":"Cá Mập Bạc",
+      "Speed":3,
+      "FishMultiple":50,
+      "MaxFishMultiple":50,
+      "Width":250,
+      "Height":250
+   },
+   {
+      "FishKind":17,
+      "Name":"Cá Mập Vàng",
+      "Speed":3,
+      "FishMultiple":75,
+      "MaxFishMultiple":75,
+      "Width":240,
+      "Height":240
+   },
+   {
+      "FishKind":18,
+      "Name":"Gậy Kim Cô",
+      "Speed":3,
+      "FishMultiple":100,
+      "MaxFishMultiple":100,
+      "Width":350,
+      "Height":350
+   },
+   {
+      "FishKind":19,
+      "Name":"Cá Voi Vua",
+      "Speed":1,
+      "FishMultiple":120,
+      "MaxFishMultiple":120,
+      "Width":450,
+      "Height":450
+   },
+   {
+      "FishKind":20,
+      "Name":"Rồng Bạc",
+      "Speed":2,
+      "FishMultiple":200,
+      "MaxFishMultiple":200,
+      "Width":380,
+      "Height":380
+   },
+   {
+      "FishKind":21,
+      "Name":"Rồng Vàng",
+      "Speed":2,
+      "FishMultiple":300,
+      "MaxFishMultiple":300,
+      "Width":380,
+      "Height":380
+   },
+   {
+      "FishKind":22,
+      "Name":"Cỏ Biển",
+      "Speed":3,
+      "FishMultiple":10,
+      "MaxFishMultiple":20,
+      "Width":120,
+      "Height":120
+   },
+   {
+      "FishKind":23,
+      "Name":"Đạn Nổ",
+      "Speed":4,
+      "FishMultiple":1,
+      "MaxFishMultiple":1,
+      "Width":170,
+      "Height":170
+   },
+   {
+      "FishKind":24,
+      "Name":"Tháp Năng Lượng",
+      "Speed":2,
+      "FishMultiple":80,
+      "MaxFishMultiple":120,
+      "Width":240,
+      "Height":240
+   },
+   {
+      "FishKind":25,
+      "Name":"Cá Nhà Táng",
+      "Speed":2,
+      "FishMultiple":100,
+      "MaxFishMultiple":140,
+      "Width":250,
+      "Height":250
+   },
+   {
+      "FishKind":26,
+      "Name":"Cá Tam Nguyên 3",
+      "Speed":3,
+      "FishMultiple":85,
+      "MaxFishMultiple":95,
+      "Width":250,
+      "Height":250
+   },
+   {
+      "FishKind":27,
+      "Name":"Cá Tam Nguyên Lớn",
+      "Speed":3,
+      "FishMultiple":30,
+      "MaxFishMultiple":70,
+      "Width":130,
+      "Height":130
+   },
+   {
+      "FishKind":28,
+      "Name":"Cá Tam Nguyên 4",
+      "Speed":3,
+      "FishMultiple":150,
+      "MaxFishMultiple":170,
+      "Width":250,
+      "Height":250
+   },
+   {
+      "FishKind":29,
+      "Name":"Cá Tử Hỉ Lớn",
+      "Speed":3,
+      "FishMultiple":35,
+      "MaxFishMultiple":65,
+      "Width":130,
+      "Height":130
+   },
+   {
+      "FishKind":30,
+      "Name":"Vua Cá Đỏ",
+      "Speed":4,
+      "FishMultiple":1,
+      "MaxFishMultiple":1,
+      "Width":170,
+      "Height":170
+   },
+   {
+      "FishKind":31,
+      "Name":"Cá Hình Dĩa",
+      "Speed":4,
+      "FishMultiple":30,
+      "MaxFishMultiple":30,
+      "Width":170,
+      "Height":170
+   },
+   {
+      "FishKind":32,
+      "Name":"Cóc xanh lè",
+      "Speed":4,
+      "FishMultiple":100,
+      "MaxFishMultiple":100,
+      "Width":170,
+      "Height":170
+   },
+   {
+      "FishKind":33,
+      "Name":"Cóc vàng khè",
+      "Speed":4,
+      "FishMultiple":200,
+      "MaxFishMultiple":200,
+      "Width":170,
+      "Height":170
+   },
+   {
+      "FishKind":34,
+      "Name":"Boss bạch tuộc đỏ",
+      "Speed":2,
+      "FishMultiple":5000,
+      "MaxFishMultiple":5000,
+      "Width":170,
+      "Height":170
+   },
+   {
+      "FishKind":35,
+      "Name":"Boss bạch tuộc vàng",
+      "Speed":2,
+      "FishMultiple":5000,
+      "MaxFishMultiple":5000,
+      "Width":170,
+      "Height":170
+   },
+   {
+      "FishKind":36,
+      "Name":"Boss người cá nam",
+      "Speed":2,
+      "FishMultiple":4500,
+      "MaxFishMultiple":4500,
+      "Width":350,
+      "Height":350
+   },
+   {
+      "FishKind":37,
+      "Name":"Boss người cá nữ",
+      "Speed":2,
+      "FishMultiple":7500,
+      "MaxFishMultiple":7500,
+      "Width":350,
+      "Height":350
+   }
+][][][][][]

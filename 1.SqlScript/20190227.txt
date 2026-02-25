@@ -1,0 +1,14 @@
+ALTER TABLE `baccarat_betlog` ADD `ChannelID` int(1)  NULL;
+ALTER TABLE `baccarat_betlog_withwin` ADD `ChannelID` int(1)  NULL;
+ALTER TABLE `outgame_log` ADD `ChannelID` int(1)  NULL;
+ALTER TABLE `slot_jackpot_win` ADD `ChannelID` int(1)  NULL;
+ALTER TABLE `slot_user_betandwin_log` ADD `ChannelID` int(1)  NULL;
+ALTER TABLE `taixiumini_betlog` ADD `ChannelID` int(1)  NULL;
+ALTER TABLE `taixiumini_betlog_withwin` ADD `ChannelID` int(1)  NULL;
+ALTER TABLE `taixiu_betlog` ADD `ChannelID` int(1)  NULL;
+ALTER TABLE `taixiu_betlog_withwin` ADD `ChannelID` int(1)  NULL;
+ALTER TABLE `vqmm_startmatch_log` ADD `ChannelID` int(1)  NULL;
+ALTER TABLE `vqmm_user_betandwin_log` ADD `ChannelID` int(1)  NULL;
+ALTER TABLE `xocdia_betlog` ADD `ChannelID` int(1)  NULL;
+ALTER TABLE `xocdia_betlog_withwin` ADD `ChannelID` int(1)  NULL;
+ALTER TABLE `listfishdie_log` ADD `ChannelID` int(1)  NULL;

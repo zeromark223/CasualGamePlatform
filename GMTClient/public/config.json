@@ -1,0 +1,7 @@
+{
+	"BindingIP":"192.168.0.249",
+	"BindingPort":3125,
+	"AllowIPList":[""],
+	"Bacarat_IP":"35.240.208.213",
+	"Bacarat_Port":8882
+}

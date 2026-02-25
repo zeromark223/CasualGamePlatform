@@ -1,0 +1,2 @@
+INSERT INTO bc68.broadcast (ID, Text, Url, LangCode, Priority, GameID, `Interval`, StartTime, EndTime) VALUES (1, 'Xin chào mấy anh đợp trai', 'https://www.facebook.com/', 0, 0, 0, 60, '2018-04-26 14:07:22', '2019-04-26 14:07:25');
+INSERT INTO bc68.broadcast (ID, Text, Url, LangCode, Priority, GameID, `Interval`, StartTime, EndTime) VALUES (2, 'Hello dumbass !', 'https://www.facebook.com/', 1, 0, 0, 60, '2018-04-26 14:07:27', '2019-04-26 14:07:30');
